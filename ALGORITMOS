@@ -1,0 +1,27 @@
+https://github.com/tiagogranbery/A.git
+
+def jogar():
+    print("Escolha uma opção: ")
+    print("1. Pedra")
+    print("2. Papel")
+    print("3. Tesoura")
+
+    opcoes = ["Pedra", "Papel", "Tesoura"]
+    jogador = int(input("Digite um número: "))
+
+    while jogador < 1 or jogador > 3:
+        jogador = int(input("Opção inválida: "))
+
+    jogador -= 1
+    computador = random.randint(0, 2)
+
+    print("Você escolheu: " + opcoes[jogador])
+    print("Computador escolheu: " + opcoes[computador])
+
+    if jogador == computador:
+        print("Empate!")
+    if (jogador == 0 and computador == 2) or (jogador == 1 and computador == 0) or (jogador == 2 and computador == 1):
+        print("Você ganhou!")
+    else:
+        print("Computador ganhou!")
+jogar()
